@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<valgrindoutput>
+
+<protocolversion>4</protocolversion>
+<protocoltool>memcheck</protocoltool>
+
+<preamble>
+  <line>Memcheck, a memory error detector</line>
+  <line>Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.</line>
+  <line>Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info</line>
+  <line>Command: ./varsort -i /tmp/tmpbzATe_/p/inputfile -o /tmp/tmpbzATe_/p/outputfile</line>
+</preamble>
+
+<pid>4772</pid>
+<ppid>4770</ppid>
+<tool>memcheck</tool>
+
+<args>
+  <vargv>
+    <exe>/usr/bin/valgrind.bin</exe>
+    <arg>--show-reachable=yes</arg>
+    <arg>--xml=yes</arg>
+    <arg>--child-silent-after-fork=yes</arg>
+    <arg>--xml-file=/tmp/tmpbzATe_/p/vg_summary.xml</arg>
+  </vargv>
+  <argv>
+    <exe>./varsort</exe>
+    <arg>-i</arg>
+    <arg>/tmp/tmpbzATe_/p/inputfile</arg>
+    <arg>-o</arg>
+    <arg>/tmp/tmpbzATe_/p/outputfile</arg>
+  </argv>
+</args>
+
+<status>
+  <state>RUNNING</state>
+  <time>00:00:00:00.025 </time>
+</status>
+
+
+<status>
+  <state>FINISHED</state>
+  <time>00:00:00:01.428 </time>
+</status>
+
+<error>
+  <unique>0x0</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>1,796,776 bytes in 100,000 blocks are definitely lost in loss record 1 of 1</text>
+    <leakedbytes>1796776</leakedbytes>
+    <leakedblocks>100000</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2DB8F</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x400C27</ip>
+      <obj>/tmp/tmpbzATe_/p/varsort</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<errorcounts>
+</errorcounts>
+
+<suppcounts>
+</suppcounts>
+
+</valgrindoutput>
+
